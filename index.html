@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<title>Q3 Drill 2</title>
+
+	<style>
+		body{
+			/* PINK + PURPLE GRADIENT */
+			background: linear-gradient(135deg, #e1c4e7, #bbdefb);
+			font-family: "Courier New", Courier, monospace;
+			min-height: 100vh;
+		}
+
+		.container{
+			max-width: 700px;
+			margin-top: 50px;
+			background: rgba(255, 255, 255, 0.92);
+			padding: 30px;
+			border-radius: 22px;
+			box-shadow: 0px 0px 18px rgba(0,0,0,0.15);
+			border: 3px dotted #e1c4e7;
+		}
+
+		h1{
+			text-align: center;
+			color: #bbdefb;
+			font-weight: bold;
+		}
+
+		.divider{
+			text-align: center;
+			color: #e1c4e7;
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		summary{
+			color: #e1c4e7;
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		#para1{
+			color: #bbdefb;
+			font-weight: bold;
+		}
+
+		label{
+			color: #bbdefb;
+			font-weight: bold;
+		}
+
+		.form-control{
+			border: 2px solid #ffcbef;
+			border-radius: 15px;
+			font-family: "Courier New", Courier, monospace;
+		}
+
+		.btn-custom{
+			background: #e1c4e7;
+			border: none;
+			border-radius: 15px;
+			font-weight: bold;
+			color: white;
+			width: 100%;
+			padding: 10px;
+			font-size: 18px;
+			font-family: "Courier New", Courier, monospace;
+		}
+
+		.btn-custom:hover{
+			background: #7c3aed;
+		}
+
+		#result{
+			text-align: center;
+			margin-top: 20px;
+			font-size: 22px;
+			font-weight: bold;
+			color: #bbdefb;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<p class="divider">⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹</p>
+
+		<h1>Basic Calculator version 2.0</h1>
+
+		<details>
+			<summary>Instructions</summary>
+			<p id="para1">Click the button to display the difference of two numbers.</p>
+		</details>
+
+		<br>
+
+		<form class="form-group">
+			<label>Enter 1st Number:</label>
+			<input type="number" id="num1" class="form-control" placeholder="input any number 0 to 100" step="any">
+			<br>
+
+			<label>Enter 2nd Number:</label>
+			<input type="number" id="num2" class="form-control" placeholder="input any decimal number from 0 to 100" step="any">
+			<br>
+
+			<button type="button" class="btn-custom" onclick="displayMe()">Display</button>
+		</form>
+
+		<p id="result"></p>
+
+		<p class="divider">⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹</p>
+
+		<script>
+			function displayMe(){
+
+				let num_1 = parseFloat(document.getElementById("num1").value);
+				let num_2 = parseFloat(document.getElementById("num2").value);
+
+				if (isNaN(num_1) || isNaN(num_2)){
+					document.getElementById("result").innerHTML = "⚠️ Please enter both numbers!";
+					return;
+				}
+
+				let diff = num_2 - num_1;
+
+				document.getElementById("result").innerHTML =
+					"The difference of two numbers is: " + diff;
+			}
+		</script>
+
+	</div>
+</body>
+</html>
